@@ -19,5 +19,3 @@ Semester 4 project in developing car insurance system with xampp
 ![CHOOSE](https://github.com/HyGlobalHD/car-insurance-web/blob/main/res/CHOOSE.JPG)
 ## UPDATE
 ![UPDATE](https://github.com/HyGlobalHD/car-insurance-web/blob/main/res/UPDATE.JPG)
-## PAYMENT
-![PAYMENT](https://github.com/HyGlobalHD/car-insurance-web/blob/main/res/PAYMENT.JPG)
