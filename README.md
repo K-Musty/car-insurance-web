@@ -2,7 +2,7 @@
 Semester 4 project in developing car insurance system with xampp
 
 # ERD
-![ERD](https://github.com/HyGlobalHD/car-insurance-web/blob/main/res/ERD.jpeg)
+![ERD](https://github.com/HyGlobalHD/car-insurance-web/blob/main/res/ERD%20LATEST%20FIXED.jpg?raw=true)
 
 # Data Dictionary
 ## EMPLOYEE
