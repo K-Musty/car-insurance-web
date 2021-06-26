@@ -6,6 +6,7 @@ Semester 4 project in developing car insurance system with xampp
 ![ERD](https://github.com/HyGlobalHD/car-insurance-web/blob/main/res/ERD%20LATEST%20FIXED.jpg?raw=true)
 
 # Data Dictionary
+// note: there has been some changes, and the following dictionary are not absolute
 ## EMPLOYEE
 ![EMPLOYEE](https://github.com/HyGlobalHD/car-insurance-web/blob/main/res/EMPLOYEE.JPG)
 ## CLIENT
