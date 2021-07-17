@@ -6,13 +6,19 @@ session_start(); // start the session
 
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     if (isset($_SESSION["user_type"]) && $_SESSION["user_type"] == "user") {
-        header("location: welcome.php");
+        header("location: user_menu.php");
         exit;
     }
 }
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     if (isset($_SESSION["user_type"]) && $_SESSION["user_type"] == "staff") {
-        header("location: staffmenu.php");
+        header("location: staff_menu.php");
+        exit;
+    }
+}
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+    if (isset($_SESSION["user_type"]) && $_SESSION["user_type"] == "admin") {
+        header("location: admin_menu.php");
         exit;
     }
 }
@@ -64,9 +70,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $stmt->bind_param("sssssss", $nric, $name, $phoneno, $address, $pass_hash, $emp_id, $admin_id);
                 $stmt->execute();
 
-                $error_msg = "<p style='color: BLACK;'> Registration Success. <a href='user_login.php' style='color:blue;'>Please click here to login.</a></p>";
+                $error_msg = "<p style='color: white;'> Registration Success. <a href='login.php' style='color:blue;'>Please click here to login.</a></p>";
             } else {
-                $error_msg = "Sorry, the NRIC entered has already been registered. <a href='user_login.php'>Please click here to login.</a>";
+                $error_msg = "Sorry, the NRIC entered has already been registered. <a href='login.php'>Please click here to login.</a>";
             }
             $stmt->close();
             $conn->close();
@@ -86,6 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register | Car Insurance</title>
 
+    <link rel="stylesheet" href="script/main.css">
     <script>
         function checkData() {
 
@@ -137,9 +144,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 </head>
 
-<body>
+<body class="center">
 
-    <p><a href="index.php">Back</a></p>
+    <button><a href="index.php">Back</a></button>
     <h2><u>User Registeration Form</u></h2>
 
     <div id="result-form" style="color: red;"></div>
@@ -149,32 +156,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ?>
     </div>
     <form id="user-form" onsubmit="return checkData()" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
-        <table>
+        <table style="border: none;">
             <tr>
-                <td>Name: </td>
+                <td style="color: white; border: none;">Name: </td>
                 <td><input type="text" name="name" id="name" placeholder="FirstName LastName" required></td>
             </tr>
             <tr>
-                <td>NRIC: </td>
+                <td style="color: white; border: none;">NRIC: </td>
                 <td><input type="text" name="nric" id="nric" placeholder="000000000000" required></td>
             </tr>
             <tr>
-                <td>Phone Number: </td>
+                <td style="color: white; border: none;">Phone Number: </td>
                 <td><input type="text" name="phoneno" id="phoneno" placeholder="01121196666" required></td>
             </tr>
             <tr>
-                <td>Address: </td>
+                <td style="color: white; border: none;">Address: </td>
                 <td><input type="text" name="address" id="adress" placeholder="Address" required></td>
             </tr>
             <tr>
-                <td>Password: </td>
+                <td style="color: white; border: none;">Password: </td>
                 <td><input type="password" name="password" id="password" placeholder="password" required></td>
             </tr>
-            <tr>
-                <td><input type="submit" value="submit"></td>
-            </tr>
+            <td style="border: none;"></td>
+            <td style="border: none;">
+                <input class="button" type="submit" value="submit">
+            </td>
         </table>
     </form>
+    <p><a href="login.php">Already have an account? Click here to login.</p>
 </body>
 
 </html>
