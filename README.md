@@ -1,5 +1,5 @@
 # car-insurance-web
-Semester 4 project in developing car insurance system with xampp
+Car Insurance Management system
 
 # ERD
 // note: forgot to put password in the client table
