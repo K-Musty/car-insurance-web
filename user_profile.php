@@ -24,7 +24,7 @@ $phoneno = $address = $name = "";
 
 $host = "localhost";
 $dbUsername = "root";
-$dbPassword = "";
+$dbPassword = "Moussamj9$";
 $dbName = "insurance";
 
 $conn = new mysqli($host, $dbUsername, $dbPassword, $dbName);

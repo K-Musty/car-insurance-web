@@ -19,7 +19,7 @@ function getIP()
     $usernric = $_SESSION['nric'];
     $host = "localhost";
     $dbUsername = "root";
-    $dbPassword = "";
+    $dbPassword = "Moussamj9$";
     $dbName = "insurance";
 
     $conn = new mysqli($host, $dbUsername, $dbPassword, $dbName);
