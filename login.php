@@ -27,7 +27,7 @@ $user_type = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $host = "localhost";
     $dbUsername = "root";
-    $dbPassword = "Moussamj9$";
+    $dbPassword = "";
     $dbName = "insurance";
 
     $user_type = $_POST["user_type"]; // get the radiobutton value
@@ -66,7 +66,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                         header("location: user_menu.php");
                         exit;
-
                     } else {
                         $error_msg = "Wrong NRIC or Password Entered.";
                     }
@@ -106,7 +105,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                         header("location: staff_menu.php");
                         exit;
-
                     } else {
                         $error_msg = "Wrong Staff ID or Password Entered.";
                     }
@@ -146,7 +144,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                         header("location: admin_menu.php");
                         exit;
-
                     } else {
                         $error_msg = "Wrong Admin ID or Password Entered.";
                     }
@@ -159,11 +156,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $error_msg = "Please enter all the fields.";
             }
         }
-
     } else {
         $error_msg = "Please choose login option.";
     }
-
 }
 ?>
 
@@ -240,7 +235,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             border: none;
             border-radius: 5px;
             cursor: pointer;
-         
+
             font-size: 16px;
         }
 

@@ -19,7 +19,7 @@ function getIP()
     $usernric = $_SESSION['nric'];
     $host = "localhost";
     $dbUsername = "root";
-    $dbPassword = "Moussamj9$";
+    $dbPassword = "";
     $dbName = "insurance";
 
     $conn = new mysqli($host, $dbUsername, $dbPassword, $dbName);
@@ -78,25 +78,28 @@ function getIP()
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-    div {
-        padding: 10px;
-    }
-    .container {
-        display: flex;
-    }
-    .fixed {
-        width: 200px;
-        margin: 20px;
-        padding-left: 50px;
-        padding-right: 50px; 
-    }
-    .flex-item {
-        border: 1px solid black;
-        flex-grow: 1;
-        margin: 20px;
-        padding-left: 50px;
-        padding-right: 50px; 
-    }
+        div {
+            padding: 10px;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .fixed {
+            width: 200px;
+            margin: 20px;
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+
+        .flex-item {
+            border: 1px solid black;
+            flex-grow: 1;
+            margin: 20px;
+            padding-left: 50px;
+            padding-right: 50px;
+        }
     </style>
 </head>
 
@@ -107,7 +110,7 @@ function getIP()
 
     <?php echo $inputResult; ?>
     <div class="container">
-    <?php echo getIP(); ?>
+        <?php echo getIP(); ?>
     </div>
 
 

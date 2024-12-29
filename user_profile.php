@@ -3,16 +3,16 @@
 session_start();
 
 // check whether user already login
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-    if(isset($_SESSION["user_type"]) && $_SESSION["user_type"] == "staff") {
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+    if (isset($_SESSION["user_type"]) && $_SESSION["user_type"] == "staff") {
         header("location: staff_menu.php");
         exit;
     }
-    if(isset($_SESSION["user_type"]) && $_SESSION["user_type"] == "admin") {
+    if (isset($_SESSION["user_type"]) && $_SESSION["user_type"] == "admin") {
         header("location: admin_menu.php");
         exit;
     }
-}else {
+} else {
     header("location: login.php");
     exit;
 }
@@ -24,7 +24,7 @@ $phoneno = $address = $name = "";
 
 $host = "localhost";
 $dbUsername = "root";
-$dbPassword = "Moussamj9$";
+$dbPassword = "";
 $dbName = "insurance";
 
 $conn = new mysqli($host, $dbUsername, $dbPassword, $dbName);
@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" &&  isset($_POST['updateButton'])) {
                 $stmt->bind_result($original_pass);
                 $stmt->fetch();
                 $oldpass = md5($oldpass, true);
-                if($oldpass == $original_pass) {
+                if ($oldpass == $original_pass) {
                     $stmt->close();
                     $newpass = md5($newpass, true);
                     $UPDATE = "UPDATE client SET CLIENT_PHONE_NO = ?, CLIENT_ADDRESS = ?, CLIENT_PASSWORD = ? WHERE CLIENT_IC = ?";
