@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if ($rnum == 1) {
                     $stmt->bind_result($nric, $passwordDB);
                     $stmt->fetch();
-                    $password = md5($password, true);
+                    // $password = md5($password, true);
 
                     if ($password == $passwordDB) {
 
@@ -134,7 +134,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if ($rnum == 1) {
                     $stmt->bind_result($admin_id, $passwordDB);
                     $stmt->fetch();
-                    $password = md5($password, true);
+                    // $password = md5($password, true);
 
                     if ($password == $passwordDB) {
 
@@ -160,6 +160,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $error_msg = "Please choose login option.";
     }
 }
+
+
 ?>
 
 <!DOCTYPE html>

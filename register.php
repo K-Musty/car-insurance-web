@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $stmt->close();
 
 
-                $pass_hash = md5($password, true);
+                // $pass_hash = md5($password, true);
 
                 $stmt = $conn->prepare($INSERT);
                 $stmt->bind_param("sssssss", $nric, $name, $phoneno, $address, $pass_hash, $emp_id, $admin_id);
